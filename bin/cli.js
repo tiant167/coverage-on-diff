@@ -120,12 +120,11 @@ try {
    */
   if (argv.report.includes('text')) {
     const data = [];
-    data.push(['File', '% Stmt', '% Branch', 'Uncovered Line #s', 'Lines Changed']);
+    data.push(['File', '% Stmt', '% Branch']);
     data.push(['All changed files',
       getColorMessage(totalStmtPercentage, `${totalStmtPercentage}%`),
       getColorMessage(totalBranchPercentage, `${totalBranchPercentage}%`),
-      '',
-      '']);
+    ]);
 
     _.forEach(diffCodeCoverage, (value, key) => {
       const stmtChanged = value.stmt.nCovered + value.stmt.nUncovered;
@@ -139,8 +138,7 @@ try {
       data.push([`    ${key}`,
         getColorMessage(stmtPercentage, `${stmtPercentage}%`),
         getColorMessage(branchPercentage, `${branchPercentage}%`),
-        value.stmt.unCoveredLines.toString(),
-        value.lines]);
+      ]);
     });
     const options = {
       columns: {
@@ -155,12 +153,10 @@ try {
 
     console.log(table.table(data, options));
   }
-  if (argv.report.includes('text-summary')) {
-    console.log(`=============================== Diff Coverage summary ===============================`);
-    console.log(getColorMessage((totalStmtPercentage), `Statements   : ${totalStmtPercentage}% ( ${totalCoveredStmt}/${totalStmt} )`));
-    console.log(getColorMessage((totalBranchPercentage), `Branches     : ${totalBranchPercentage}% ( ${totalCoveredBranch}/${totalBranch} )`));
-    console.log(`=====================================================================================`);
-  }
+  console.log(`=============================== Diff Coverage summary ===============================`);
+  console.log(getColorMessage((totalStmtPercentage), `Statements   : ${totalStmtPercentage}% ( ${totalCoveredStmt}/${totalStmt} )`));
+  console.log(getColorMessage((totalBranchPercentage), `Branches     : ${totalBranchPercentage}% ( ${totalCoveredBranch}/${totalBranch} )`));
+  console.log(`=====================================================================================`);
 
   /*
    * Threshold Checks

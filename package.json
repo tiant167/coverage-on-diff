@@ -1,7 +1,7 @@
 {
-  "name": "coverage-on-diff",
+  "name": "@tiant167/coverage-on-diff",
   "version": "0.0.3",
-  "description": "A tool to get code coverage on new lines added based on a diff",
+  "description": "A tool to get code coverage on new lines added based on a diff.",
   "main": "index.js",
   "scripts": {
     "eslint": "node ./node_modules/eslint/bin/eslint .",
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/classy-org/coverage-on-diff.git"
+    "url": "git+https://github.com/tiant167/coverage-on-diff"
   },
   "bin": {
     "coverageOnDiff": "./bin/cli.js"
   },
-  "author": "tkua@classy.org",
+  "author": "haotianchai@gmail.com",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
@@ -38,9 +38,9 @@
     "sinon": "^7.1.1"
   },
   "bugs": {
-    "url": "https://github.com/classy-org/coverage-on-diff/issues"
+    "url": "https://github.com/tiant167/coverage-on-diff/issues"
   },
-  "homepage": "https://github.com/classy-org/coverage-on-diff#readme",
+  "homepage": "https://github.com/tiant167/coverage-on-diff#readme",
   "keywords": [
     "coverage",
     "diff",

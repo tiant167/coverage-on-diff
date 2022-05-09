@@ -40,6 +40,10 @@ _text-summary view_
 
 
 _text view_
+The difference between this forked repo and the original repo is:
+1. In text view, text-summary will still be printed.
+2. The detail lines in printed table is removed.
+
 ```shell
 ./coverageOnDiff -d ~/dev/branch.diff -r text
 ```
@@ -47,4 +51,4 @@ _text view_
 
 
 
-Threshold test will run by default with 80% statement coverage and 0% branch coverage 
+Threshold test will run by default with 80% statement coverage and 0% branch coverage
